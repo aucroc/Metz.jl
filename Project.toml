@@ -1,0 +1,5 @@
+name = "Metz"
+uuid = "e6fe908e-132d-456b-b591-73b71e14d48e"
+license = "MIT"
+authors = ["Alexander L. Hayes <alexander@batflyer.net>"]
+version = "0.1.0"
