@@ -12,10 +12,10 @@ function delong_auc(y_true::Vector{Int64}, y_pred::Vector{Float64})
     pos = y_pred[y_true .== 1]
     neg = y_pred[y_true .== 0]
 
-    return delong_auc(neg, pos)
+    return _delong_auc(neg, pos)
 end
 
-function delong_auc(neg::Vector{Float64}, pos::Vector{Float64})
+function _delong_auc(neg::Vector{Float64}, pos::Vector{Float64})
 
     auc = Ref{Float64}(0.0)
 
@@ -35,9 +35,3 @@ function delong_auc(neg::Vector{Float64}, pos::Vector{Float64})
 end
 
 end # module
-
-println(LIBROC.delong_auc(
-    [1, 1, 0, 1, 1, 1, 0, 0, 1, 0],
-    [0.9, 0.8, 0.7, 0.6, 0.55, 0.54, 0.53, 0.52, 0.51, 0.505],
-    )
-)
